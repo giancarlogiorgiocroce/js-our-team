@@ -15,16 +15,47 @@ Utilizzare gli input presenti nella pagina per permettere all’utente di aggiun
 */
 
 /***************************
-    VARIABILI GLOBALI
-***************************/
+ VARIABILI GLOBALI
+ ***************************/
+const bottone = document.getElementById("addMemberButton");
+
 const arrayTeam = [
     {
         foto: "img/wayne-barnett-founder-ceo.jpg",
         nome: "Wayne Barnett",
         posizione: "Founder & CEO"
+    },
+    {
+        foto: "img/angela-caroll-chief-editor.jpg",
+        nome: "Angela Caroll",
+        posizione: "Chief Editor"
+    },
+    {
+        foto: "img/walter-gordon-office-manager.jpg",
+        nome: "Walter Gordon",
+        posizione: "Office Manager"
+    },
+    {
+        foto: "img/angela-lopez-social-media-manager.jpg",
+        nome: "Angela Lopez",
+        posizione: "Social Media Manager"
+    },
+    {
+        foto: "img/scott-estrada-developer.jpg",
+        nome: "Scott Estrada",
+        posizione: "Developer"
+    },
+    {
+        foto: "img/barbara-ramos-graphic-designer.jpg",
+        nome: "Barbara Ramos",
+        posizione: "Graphic Designer"
+    },
+    {
+        foto: "img/WhatsApp Image 2022-04-27 at 12.50.48.jpeg",
+        nome: "Ago",
+        posizione: "Sex Symbol"
     }
 ]
-console.log(arrayTeam[0].foto);
 
 
 /***************************
@@ -49,7 +80,33 @@ function stampaCollega(foto, nome, posizione){
     `
 }
 
+function aggiungiCollega(){
+    const foto = document.getElementById("image").value;
+    const nome = document.getElementById("name").value;
+    const posizione = document.getElementById("role").value;
+
+    let nuovoMembro = [];
+    nuovoMembro.push(foto);
+    nuovoMembro.push(nome);
+    nuovoMembro.push(posizione);
+
+    arrayTeam.push(nuovoMembro);
+
+    stampaCollega(foto, nome, posizione);
+}
+
+
 /***************************
     INIZIALIZZAZIONE
 ****************************/
-stampaCollega(arrayTeam[0].foto, arrayTeam[0].nome, arrayTeam[0].posizione);
+inizia();
+
+function inizia(){
+    
+    for(let i in arrayTeam){
+        stampaCollega(arrayTeam[i].foto, arrayTeam[i].nome, arrayTeam[i].posizione);
+    }
+    
+}
+
+bottone.addEventListener("click", aggiungiCollega);
