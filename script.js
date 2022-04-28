@@ -94,9 +94,13 @@ function aggiungiCollega(){
 
     stampaCollega(foto, nome, posizione);
 
-    foto.innerHTML = "";
-    nome.innerHTML = "";
-    posizione.innerHTML = "";
+    pulisciInput();
+}
+
+function pulisciInput(){
+    document.getElementById("image").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("role").value = "";
 }
 
 
