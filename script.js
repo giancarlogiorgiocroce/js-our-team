@@ -93,6 +93,10 @@ function aggiungiCollega(){
     arrayTeam.push(nuovoMembro);
 
     stampaCollega(foto, nome, posizione);
+
+    foto.innerHTML = "";
+    nome.innerHTML = "";
+    posizione.innerHTML = "";
 }
 
 
